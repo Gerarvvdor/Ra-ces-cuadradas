@@ -1,0 +1,17 @@
+Una cadena de strings
+Convertirla a entero
+
+
+1) Tomar el número, convertirlo a arreglo y separar el arreglo de 2 en 2 empezando de derecha a izquiera, si el primer número 
+queda solo, entonces agregar un 0 al inicio del arreglo
+2) Encontrar la raiz del cuadrado más proximo que sea menor al número (arreglo de nombre ansFinal).
+3) Tomar el cuadrado de la raiz encontrada anteriormente y restarla al primer termino.
+4) Bajar el siguiente par de número y adjuntarlo al valor de la resta.
+5) Tomar todos los números excepto el último a la derecha (restaActual = todos los números) y dividirlo entre el doble de ansFinal
+6) Tomar el residuo entero y concatenarlo al doble de ansFinal para multiplicarlo por el residuo entero
+7) El producto restarlo a restaActual y el resultado pasa a ser resta restaActual
+8) Repetir del 4 al 8 hasta que se acababen las parejas
+
+Para inexactas
+9) Añadir un 0 al final de valor resta actual, poner un punto en ansFinal, luego dividirlo entre el doble de ansFinal.
+10) Se multiplica ansFinal por el residuo entero y ese valor se resta a restaActual y así sucesivamente en un máximo de 9 iteraciones
