@@ -35,7 +35,7 @@ print("Inciando calculo de raiz del número :)")
 operacion_actual = int(paired_numbers[0])
 print("Primera operación:", operacion_actual)
 
-for i in range(1,10):
+for i in range(0,9):
     if (i*i) <= operacion_actual:
         actual_square = i
         actual_cuad = i*i
@@ -76,7 +76,26 @@ while len(paired_numbers) > 0:
     paired_numbers.pop(0)
     print("Paired_numbers: ",paired_numbers)
     answer = answer + str(residuo)
+    print("Operación actual: ",operacion_actual)
+
+#Calculand o partes decimales
+for i in range(0,2):
+    decimals = []
+    cero = 0
+    decimals = str(operacion_actual) + str(cero) #concatenando un cero para poder operar
+    decim_residuo = floor(int(decimals) / (2*int(answer)))
+    if decim_residuo > 10: #solo se pueden usar raices del 1 al 9
+        decim_residuo = 9
+    else:
+        decim_residuo
+    decim_temp_ans = 2*int(answer)
+    decim_product = int(decim_temp_ans) * int(decim_residuo)
+    operacion_actual = int(decimals) - int(decim_product)
+    final_decimals = decim_residuo
+    decimals= str(final_decimals)+ str(decim_residuo)
+    
+    print("Decimales: ",final_decimals)
 
 
-print("La raiz es: ", answer)
+print("La raiz es: ", answer, ".", decimals)
 
