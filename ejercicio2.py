@@ -1,4 +1,3 @@
-from math import floor
 from math import *
 
 numbers = [] #Lista que guarda el número inicial
@@ -49,28 +48,34 @@ answer = str(actual_square)
 # Eliminar el primer elemento de paired_numbers
 paired_numbers.pop(0)
 
-# Bucle para elementos del 2 hasta n
-def square_method():
-    while len(paired_numbers) > 0:
-        operacion_actual = str(operacion_actual) + (paired_numbers[0])
-        print("Resta actual: ", operacion_actual)
-        operacion_actual = int(operacion_actual)
-        num_div = operacion_actual
-        num_div = str(num_div)
-        num_div = num_div[:-1]
-        num_div = int(num_div)
-        print("Numero sin el último",num_div)
-        residuo = floor(num_div/(2*int(answer)))
-        if residuo > 10:
-            residuo = 9
-        else:
-            residuo
-        print("Residuo: ", residuo)
-        producto = num_div * residuo
+# Bucle para elementos del 01 hasta n
+while len(paired_numbers) > 0:
 
-        operacion_actual = operacion_actual - producto
-        print("Después de resta: ",operacion_actual)
-        paired_numbers.pop(0)
+    operacion_actual = str(operacion_actual) + (paired_numbers[0]) #se guarda la resta junto con el siguiente par de números
+    print("Resta actual: ", operacion_actual) 
+    num_div = operacion_actual #se guarda el número actual para quitarle el último dígito
+    num_div = num_div[:-1] #se quita el último dígito
+    num_div = int(num_div) #se convierte a entero para poder operar con él
+    print("Numero sin el último",num_div)
+    residuo = floor(num_div/(2*int(answer)))
+    if residuo > 10: #solo se pueden usar raices del 1 al 9
+        residuo = 9
+    else:
+        residuo
+
+    print("Residuo: ", residuo)
+    print("Respuesta actual: ",answer)
+    temp_ans = 2*int(answer) 
+    temp_ans = str(temp_ans) + str(residuo) #Concatenando el doble de la raiz actual al residuo
+    print("Temp_ans: ",temp_ans)
+    producto = int(temp_ans) * int(residuo)
+    print("Producto: ",producto)
+
+    operacion_actual = int(operacion_actual) - int(producto) #restando el producto de la resta actual
+    print("Después de resta: ",operacion_actual)
+    paired_numbers.pop(0)
+    print("Paired_numbers: ",paired_numbers)
+    answer = answer + str(residuo)
 
 
 print("La raiz es: ", answer)
